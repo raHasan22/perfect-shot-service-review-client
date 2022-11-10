@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AllService = ({allService}) => {
 
-    const {name, image, detail, rating} = allService;
+    const { _id, name, image, detail, rating, price } = allService;
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
             <figure><img src={image} alt="photograph" /></figure>
@@ -13,8 +14,8 @@ const AllService = ({allService}) => {
                 </h2>
                 <p>{detail}</p>
                 <div className="card-actions justify-end">
-                <div className="badge badge-outline">Fashion</div> 
-                <div className="badge badge-outline">Products</div>
+                <div className="badge badge-outline">${price}</div> 
+                <div className="badge badge-outline"><Link to={`/service/${_id}`} >Details</Link></div>
                 </div>
             </div>
         </div>
