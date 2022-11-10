@@ -5,6 +5,7 @@ const Navigation = () => {
 
     const navItems = <>
                 <li className='font-semibold'><Link to='/'>Home</Link></li>
+                <li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
     </>
 
     return (
