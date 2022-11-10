@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../AuthProvider/AuthPrivider';
 
 const Navigation = () => {
+    const { user, logout } = useContext(AuthContext);
+
+    const signOutHandle = () =>{
+        logout()
+        .then()
+        .catch();
+    }
 
     const navItems = <>
                 <li className='font-semibold'><Link to='/'>Home</Link></li>
                 <li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
-                <li className='font-semibold'><Link to='/login'>Log In</Link></li>
+                {
+                    user?.email ?
+                    <>
+                      <li className='font-semibold'>
+                        <button onClick={signOutHandle} className='btn-ghost'>Sign Out</button>
+                      </li>
+                    </>
+                    :
+                    <li className='font-semibold'><Link to='/login'>Login</Link></li>
+                }
     </>
 
     return (
@@ -29,12 +46,14 @@ const Navigation = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a href='/' className="btn">Get started</a>
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                            <img alt='' src="https://placeimg.com/80/80/people" />
-                            </div>
-                        </label>
+                    {
+                    user?.email ?
+                    <>
+                      <Link to='/services' className="btn">{user?.email}</Link>
+                    </>
+                    :
+                    <Link to='/login' className="btn">Not registered</Link>
+                }
                         
                 </div>
                 

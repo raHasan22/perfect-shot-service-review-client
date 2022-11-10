@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthPrivider';
 
 const SignUp = () => {
+    const {createUser} = useContext(AuthContext)
+    const handleSignUp = event =>{
+        event.preventDefault();
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        createUser(email, password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(err => console.error(err));
+    }
+
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -10,7 +24,7 @@ const SignUp = () => {
                 <h1 className="text-5xl font-bold">Register !!</h1>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                <form className="card-body">
+                <form onSubmit={handleSignUp} className="card-body">
                     <div className="form-control">
                     <label className="label">
                         <span className="label-text">Name</span>
