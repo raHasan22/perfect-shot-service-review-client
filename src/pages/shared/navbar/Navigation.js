@@ -32,7 +32,7 @@ const Navigation = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Get started</a>
+                    <a href='/' className="btn">Get started</a>
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                             <img alt='' src="https://placeimg.com/80/80/people" />
