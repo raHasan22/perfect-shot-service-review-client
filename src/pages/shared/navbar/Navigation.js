@@ -6,6 +6,7 @@ const Navigation = () => {
     const navItems = <>
                 <li className='font-semibold'><Link to='/'>Home</Link></li>
                 <li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
+                <li className='font-semibold'><Link to='/login'>Log In</Link></li>
     </>
 
     return (
