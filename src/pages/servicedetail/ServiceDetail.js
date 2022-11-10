@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 
 const ServiceDetail = () => {
@@ -12,7 +12,7 @@ const ServiceDetail = () => {
                 <div>
                 <h1 className="text-5xl font-bold">{service.name}</h1>
                 <p className="py-6">{service.description}</p>
-                <button className="btn btn-primary">Recruit Photographer</button>
+                <button className="btn btn-primary"><Link to='/login'>Recruit Photographer</Link></button>
                 </div>
             </div>
             </div> 

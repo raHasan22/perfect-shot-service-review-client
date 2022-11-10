@@ -41,7 +41,7 @@ const router = createBrowserRouter([
             {
                 path: '/service/:id',
                 element: <ServiceDetail></ServiceDetail>,
-                loader: ({params}) => fetch(`http://localhost:5000/service/${params.id}`)
+                loader: ({params}) => fetch(`https://service-review-server-ashen.vercel.app/service/${params.id}`)
             },
         ]
     }
