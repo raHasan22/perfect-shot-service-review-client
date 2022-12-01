@@ -1,8 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthPrivider';
+import toast from 'react-hot-toast';
+import useTitle from '../../Hooks/useTitle';
 
 const SignUp = () => {
+    useTitle('Sign Up');
     const {createUser} = useContext(AuthContext)
     const handleSignUp = event =>{
         event.preventDefault();
@@ -11,9 +14,11 @@ const SignUp = () => {
         createUser(email, password)
         .then(result =>{
             const user = result.user;
-            console.log(user);
+            toast.success(`${user.email} Signed up Successful`);
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+            toast.error(`${err}`)
+        });
     }
 
     return (

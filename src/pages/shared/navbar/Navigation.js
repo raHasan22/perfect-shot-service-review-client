@@ -24,6 +24,9 @@ const Navigation = () => {
                     :
                     <li className='font-semibold'><Link to='/login'>Login</Link></li>
                 }
+                {
+                    user?.email && <li className='font-semibold'><Link to='/checkreview'>My reviews</Link></li>
+                }
     </>
 
     return (

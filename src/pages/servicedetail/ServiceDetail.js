@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
+
 
 
 const ServiceDetail = () => {
+    useTitle('Details');
     const service = useLoaderData();
     return (
         <div>
@@ -12,7 +15,7 @@ const ServiceDetail = () => {
                 <div>
                 <h1 className="text-5xl font-bold">{service.name}</h1>
                 <p className="py-6">{service.description}</p>
-                <button className="btn btn-primary"><Link to='/login'>Recruit Photographer</Link></button>
+                <button className="btn btn-primary"><Link to='/addreview'>Review</Link></button>
                 </div>
             </div>
             </div> 

@@ -68,3 +68,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Live Website: [https://photo-shoot-2f98a.web.app]
+* Home page have slider as banner
+* Have a see all button to see all services
+* Have a navBar where user can see email after log in 
+* Password base sign up and log in system
+* Services collected from mongodb
+
+# After re-submission
+* Readme file bullet points added
+* Toast added on log in and sign up
+* Dynamic Title Added
+* Private Route Added
+* Registered user can add review from service detail page
+* Abd registered can also check his own reviews from navBar all under private route

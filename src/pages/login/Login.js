@@ -1,20 +1,31 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthPrivider';
+import toast from 'react-hot-toast';
+import useTitle from "../../Hooks/useTitle";
 
 const Login = () => {
-
+    useTitle('Login');
     const {login} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogin = event =>{
+        event.preventDefault()
         const email =  event.target.email.value;
         const password = event.target.password.value;
         login(email, password)
         .then(result => {
             const user = result.user;
-            console.log(user)
+            toast.success(`${user.email} Log in Successful`);
+            navigate(from, {replace: true});
         })
-        .then(error => console.error(error));
+        .then(error => {
+            toast.error(`${error}`)
+        });
     }
 
     return (
