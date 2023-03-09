@@ -5,9 +5,9 @@ const AllService = ({allService}) => {
 
     const { _id, name, image, detail, rating, price } = allService;
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src={image} alt="photograph" /></figure>
-            <div className="card-body">
+        <div className="card bg-base-100 shadow-xl">
+            <figure><img className='w-full' src={image} alt="photograph" /></figure>
+            <div className="card-body rounded-b-xl border border-t-0 border-yellow-800">
                 <h2 className="card-title">
                 {name}
                 <div className="badge badge-secondary">{rating}</div>
